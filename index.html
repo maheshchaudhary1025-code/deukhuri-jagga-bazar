@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ne">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Deukhuri Jagga Bazar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #2e7d32;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header p {
+            margin: 5px 0 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .photo-gallery {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .photo img {
+            width: 150px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .map iframe {
+            border: 0;
+            border-radius: 6px;
+        }
+
+        /* Lightbox */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>देउखुरी जग्गा बजार</h1>
+        <p>Lamahi, Dang मा जग्गा किन्न–बेच्न भरपर्दो सेवा</p>
+        <a class="btn" href="tel:+9779863120458">📞 Call Now</a>
+        <a class="btn" href="https://wa.me/9779863120458">💬 WhatsApp</a>
+    </header>
+
+    <section>
+        <h2>🏡 जग्गा सूची</h2>
+
+        <!-- Land Card -->
+        <div class="card">
+            <h3>📍 Chaulahi, Lamahi, Dang</h3>
+
+            <!-- Photo -->
+            <div class="photo-gallery">
+                <div class="photo">
+                    <img src="land.png" alt="Land Photo" onclick="openLightbox(this.src)">
+                </div>
+            </div>
+
+            <!-- Land Details -->
+            <p>📐 <b>क्षेत्रफल:</b> 6 धुर</p>
+            <p>🛣️ <b>बाटो:</b> 6 मिटर बाटो टच</p>
+            <p>💰 <b>मूल्य:</b> Call for Price</p>
+
+            <!-- Map -->
+            <div class="map" style="margin-top:10px;">
+                <iframe width="100%" height="250" loading="lazy" allowfullscreen
+                    src="https://www.google.com/maps?q=27.864170,82.519614&hl=ne&z=17&output=embed">
+                </iframe>
+            </div>
+
+            <!-- Contact Buttons -->
+            <a class="btn" href="tel:+9779863120458">📞 Call</a>
+            <a class="btn" href="https://wa.me/9779863120458">💬 WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section>
+        <h2>ℹ️ हाम्रो बारेमा</h2>
+        <p>
+            देउखुरी जग्गा बजार Lamahi, Dang क्षेत्रमा सुरक्षित र पारदर्शी
+            जग्गा खरिद–बिक्री सेवा प्रदान गर्ने स्थानीय प्लेटफर्म हो।
+            हाम्रो उद्देश्य ग्राहकलाई सही जानकारी, उचित मूल्य र सहज सेवा प्रदान गर्नु हो।
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+        <h2>📞 सम्पर्क</h2>
+        <p>📱 9863120458</p>
+        <p>📍 Lamahi, Dang</p>
+    </section>
+
+    <!-- Lightbox for photo -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img">
+    </div>
+
+    <footer>
+        © 2025 Deukhuri Jagga Bazar
+    </footer>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById("lightbox-img").src = src;
+            document.getElementById("lightbox").style.display = "flex";
+        }
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
